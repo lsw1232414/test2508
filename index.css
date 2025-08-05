@@ -1,0 +1,147 @@
+body {
+  background: linear-gradient(135deg, #eef2f3, #d2e1ec);
+  color: #333;
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 42px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: black;
+}
+
+p {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 50px;
+  color: black;
+}
+
+/* 상단 메뉴바 */
+.top-menu {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  background: #ffffffcc;
+  backdrop-filter: blur(8px);
+  padding: 12px 24px;
+  border-radius: 12px;
+  margin: 20px auto 40px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  width: fit-content;
+}
+
+.top-menu a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+.top-menu a:hover {
+  background-color: #e0ebff;
+  color: #1a1a1a;
+  transform: scale(1.05);
+}
+
+.weekday-header {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  font-weight: bold;
+  font-size: 17px;
+  text-align: center;
+  margin-bottom: 25px;
+  color: black;
+}
+
+.week-section {
+  margin-bottom: 50px;
+}
+
+.week-label {
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 14px;
+  color: black;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.hw {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  height: 200px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: box-shadow 0.5s ease;
+}
+
+.hw:hover {
+  box-shadow: 10px 10px 10px gray;
+}
+
+.hw-title {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.hw-title .day {
+  font-size: 18px;
+  display: block;
+  font-weight: 600;
+  color: black;
+}
+
+.hw-title .date {
+  display: block;
+  font-size: 14px;
+  color: gray;
+}
+
+.hw a {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #f0f4fa;
+  color: #333;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.08);
+  margin-top: 10px;
+}
+
+.hw a:hover {
+  background-color: #c7dfff;
+  transform: scale(1.05);
+}
+
+.hw.empty {
+  background: #f4f4f4;
+  border: 1px dashed #ccc;
+  box-shadow: none;
+  pointer-events: none;
+  height: 200px;
+}
