@@ -261,9 +261,7 @@ img {
 #contents .info .info-menu a.active {
     text-decoration: underline;
 }
-#contents .info .info-cont .notice {
-    /* display: none; */
-}
+
 #contents .info .info-cont .notice li {
     display: flex;
 }
