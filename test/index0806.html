@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/a_1.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="logo">
+                LOGO
+            </div>
+            <nav class="menu">
+                <a href="#">탑</a>
+                <a href="#">아우터</a>
+                <a href="#">팬츠</a>
+                <a href="#">악세사리</a>
+
+                <div class="submenu">
+                    <a href="#">블라우스</a>
+                    <a href="#">티</a>
+                    <a href="#">셔츠</a>
+                    <a href="#">니트</a>
+
+                    <a href="#">자켓</a>
+                    <a href="#">코트</a>
+                    <a href="#">가디건</a>
+                    <a href="#">머플러</a>
+
+                    <a href="#">청바지</a>
+                    <a href="#">짧은바지</a>
+                    <a href="#">머플러</a>
+                    <a href="#">청바지</a>
+
+                    <a href="#">귀고리</a>
+                    <a href="#">목걸이</a>
+                    <a href="#">반지</a>
+                    <a href="#">팔찌</a>
+                </div>
+            </nav>
+
+        </header>
+        <div class="slide">
+            <div class="slidecon">
+                <img src="./images/1.PNG" alt="1">
+                <img src="./images/1_3.PNG" alt="2">
+                <img src="./images/1_1.PNG" alt="3">
+            </div>
+        </div>
+        <div class="content">
+            <div class="con1">
+                <div id="contents">
+                    <section class="info">
+                        <h3 class="info-menu">
+                            <a href="#" class="active">공지사항</a>
+                            <a href="#">갤러리</a>
+                        </h3>
+                        <div class="info-cont">
+                            <div class="notice">
+                                <ul>
+                                    <li><a href="#">JUST 배송안내</a><span>2025.08.07</span></li>
+                                    <li><a href="#">JUST 이벤트 안내</a><span>2025.08.08</span></li>
+                                    <li><a href="#">JUST 환불규정 안내</a><span>2025.08.09</span></li>
+                                </ul>
+                            </div>
+                            <div class="gallery">
+                                <ul>
+                                    <li><a href="#"><img src="./images/shoe.png" alt="신발"></a></li>
+                                    <li><a href="#"><img src="./images/bag.jpg" alt="가방"></a></li>
+                                    <li><a href="#"><img src="./images/acc.jpg" alt="악세사리"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <div class="con2">
+                <a href="https://www.ysedu.or.kr/" target="_blank">
+                    <img src="./images/shortcut2.png" alt="교육원바로가기">
+                </a>
+            </div>
+            <div class="con3">
+                <a href="https://www.ysedu.or.kr/" target="_blank">
+                    <img src="./images/shortcut.jpg" alt="교육원바로가기">
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <footer>
+                <div class="f1">
+                    LOGO
+                </div>
+                <div class="f2">
+                    COPYRIGHT 2025, All Rights Reserved
+                </div>
+                <div class="f3">
+                    <ul>
+                        <li><a href="#"><img src="./images/insta.svg" alt="">인스타그램</a></li>
+                        <li><a href="#"><img src="./images/face.svg" alt="">페이스북</a></li>
+                        <li><a href="#"><img src="./images/you.svg" alt="">유튜브</a></li>
+                    </ul>
+
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+
+    <!--JS -->
+    <script>
+        $(function () {
+            const $slidecon = $('.slidecon');
+            const slideWidth = 1200;
+            const slideSpeed = 1000;
+            const delay = 2000;
+
+            function infiniteSlide() {
+                $slidecon.animate({ left: `-${slideWidth}px` }, slideSpeed, function () {
+                    $slidecon.append($slidecon.find('img').first());
+                    $slidecon.css('left', 0);
+                });
+            }
+
+            setInterval(infiniteSlide, delay);
+        });
+
+
+        //탭메뉴
+        const tabBtn = document.querySelectorAll(".info-menu > a") //버튼 설정
+        const tabCont = document.querySelectorAll(".info-cont > div") // 콘텐츠 설정
+
+        tabCont.forEach(el => el.style.display = "none"); //모든 콘텐츠를 숨김
+        tabCont[0].style.display = "block"; //첫번째 콘텐츠를 보이게 설정
+
+        tabBtn.forEach((tab, index) => {
+            tab.addEventListener("click", () => {
+                tabBtn.forEach(tab => tab.classList.remove("active")); //모든 버튼 클래스 삭제
+                tab.classList.add("active"); //클릭한 버튼만 클래스 추가
+
+                tabCont.forEach(cont => cont.style.display = "none"); //모든 콘텐츠를 숨김
+                tabCont[index].style.display = "block"; //클릭한 버튼의 콘텐츠 내용을 보여줌
+            });
+        });
+    </script>
+</body>
+
+</html>
